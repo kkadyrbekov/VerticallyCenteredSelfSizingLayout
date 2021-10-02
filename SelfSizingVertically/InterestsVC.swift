@@ -17,6 +17,11 @@ class InterestsVC: UIViewController {
         layout.delegate = self
         collectionView.collectionViewLayout = layout
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.reloadData()
+    }
 }
 
 extension InterestsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
